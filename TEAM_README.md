@@ -30,6 +30,21 @@ The baseline writes `baseline_raw`, `baseline_smooth25`, `baseline_smooth50`, an
 The submitted candidate is the 50-frame half-window variant. The public five-minute labels were
 not used for training or tuning.
 
+## Experimental V2 model
+
+`team_model.py` contains a separate tracking-evidence and temporal-state model. It has not been
+shown to outperform the official baseline. See [MODEL_V2_NOTES.md](MODEL_V2_NOTES.md) for its
+features, fixed defaults, tests, diagnostics, and reproduction command. Reproduce the hardened
+candidate with:
+
+```powershell
+.\.venv\Scripts\python.exe team_model.py --out submission_artifacts/TEAM_NAME_PENDING_v2_hardened.csv
+.\.venv\Scripts\python.exe evaluation\validate_submission.py submission_artifacts/TEAM_NAME_PENDING_v2_hardened.csv
+```
+
+Its full-match candidate is gitignored. Optional Smart Tagging and homography files, when present,
+belong in the ignored `data/tactical/` folder; the current V2 implementation does not consume them.
+
 ## Submission reminder
 
 Before uploading, replace the provisional filename with the exact registered team name, publish
