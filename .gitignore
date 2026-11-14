@@ -18,6 +18,7 @@ possession_by_frame.pkl
 # Any file in results/ is a set of labels for the whole match. A perfect one is a copy of the
 # ground truth, so the folder ships empty and stays that way.
 evaluation/results/*.csv
+submission_artifacts/*.csv
 
 # ...with one deliberate exception. The baselines are computed from the ATD alone -- the same ATD
 # every enrolled participant has -- and never read a ground truth of any kind, so they carry no
@@ -37,6 +38,10 @@ data/*
 *.pl3container
 
 # -- internal documents ---------------------------------------------------------------------------
+# Local agent handoff and safety notes; keep them out of the public submission repository.
+CODEX_HANDOFF.md
+FINAL_REVIEW.md
+
 # OVERVIEW.md -- the institutional description of the competition -- IS committed. It is the only
 # place that explains why the format changed from 2026, and a document like that circulating by
 # email is exactly the artifact README.md's "anything you were sent earlier is superseded" line

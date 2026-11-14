@@ -1,4 +1,4 @@
-# Everything the evaluation needs. Deliberately two lines.
+# Everything the evaluation needs. Deliberately minimal.
 #
 # The scorer is dependency-light on purpose: no sklearn, no torch, nothing that pins a Python
 # version. It runs under 3.8 and 3.11 alike and produces identical output, so "it scored
@@ -7,4 +7,5 @@
 # Optional tooling -- the ATD loader and anything that opens the video -- lives in
 # requirements-starter.txt.
 numpy
-pandas
+# Keep the validator on the tested pandas 2.x line (Python 3.8+ compatible).
+pandas<3
